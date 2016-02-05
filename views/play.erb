@@ -4,10 +4,15 @@
 
 
 <!-- <a href="/attack">Attack</a> -->
+<% if @game.turn == @player_1%>
 
 <form action='/attack' method='get'>
   <input type="submit" value="Attack <%= @player_2_name %>">
 </form>
+<%end%>
+
+<% if @game.turn == @player_2%>
 <form action='/attack' method='get'>
   <input type="submit" value="Attack <%= @player_1_name %>">
 </form>
+<% end %>

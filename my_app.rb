@@ -18,6 +18,8 @@ class MyApp < Sinatra::Base
 
   get '/play' do
     @game = $game
+    @player_1 =@game.player_1
+    @player_2 = @game.player_2
     @player_1_name = @game.player_1.name
     @player_2_name = @game.player_2.name
     @player_1_hp = @game.player_1.hp

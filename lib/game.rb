@@ -5,6 +5,7 @@ class Game
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
     @turn = player_1
+    @counter = 0
   end
 
   def player_1
@@ -16,10 +17,20 @@ class Game
   end
 
   def attack(player)
+    @counter += 1
     player.receives_damage
   end
 
-  def who_starts_first
-    @players.sample
+  # def who_starts_first
+  #   @players.sample
+  # end
+
+  def turn
+    if @counter %2 == 0
+      @players[0]
+    else
+      @players[1]
+    end
   end
+
 end
